@@ -9,11 +9,75 @@
   <link href="/dist/output.css" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/custom.css" />
   <!--Google Fonts-->
+  <style>
+    .nested-accordion {
+      margin-top: 0.5em;
+      cursor: pointer;
+      width: 95%;
+      margin: 0 auto;
+      border-bottom: 1px solid rgb(214, 207, 207);
+    }
+
+    .nested-accordion h2 {
+      padding: 0 0.5em;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    .nested-accordion .comment {
+      line-height: 1.5;
+    }
+
+    .nested-accordion h2 {
+      color: #47a3da;
+    }
+
+    .nested-accordion h2:after {
+      content: "+";
+      padding-right: 0.25em;
+      color: #becbd2;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: "Lucida Console", Monaco, monospace;
+      position: absolute;
+      right: 0;
+    }
+
+    .nested-accordion {
+      position: relative;
+      padding: 6px 0px;
+    }
+
+    .nested-accordion h2.selected {
+      color: black;
+      background: #f3f3f3;
+    }
+
+    .nested-accordion h2.selected:after {
+      content: "-";
+    }
+
+    .nested-accordion .comment {
+      color: #768e9d;
+      border: none;
+    }
+
+    .nested-accordion h2 {
+      color: black;
+    }
+
+    .dropdown-arrow:after {
+      content: "\25BC";
+      /* Down arrow */
+      padding-left: 0.25em;
+    }
+  </style>
 
 </head>
 
 <body>
-  <!-- header start -->
+
+  <!-- header start destop menu -->
   <div class="container mx-auto mt-8">
     <div class="relative rounded-full flex justify-center items-center w-[30%]  ">
       <!-- Search Icon -->
@@ -31,8 +95,9 @@
         type="text" placeholder="Search Product" />
     </div>
   </div>
-  <div class="border-[1px] mt-4 border-black"></div>
 
+
+  <div class="border-[1px] mt-4 border-black"></div>
   <div class="container mx-auto mt-2">
     <ul class="w-full flex justify-between">
       <li>
@@ -505,6 +570,20 @@
 
     </ul>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- Javascript Link -->
   <script src="../assets/js/data.js"></script>
   <script src="../assets/js/function.js"></script>
