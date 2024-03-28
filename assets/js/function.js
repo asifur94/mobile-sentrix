@@ -61,3 +61,29 @@
 
 
    
+        // cart popup
+
+
+     // Get the button element with new ID
+     const togglePopupButtonNew = document.getElementById('togglePopupButtonNew');
+     // Get the popup element with new ID
+     const popupNew = document.getElementById('popupNew');
+ 
+     // Function to toggle the popup
+     function togglePopupNew() {
+       if (popupNew.classList.contains('hidden')) {
+         popupNew.classList.remove('hidden'); // Show the popup
+       } else {
+         popupNew.classList.add('hidden'); // Hide the popup
+       }
+     }
+ 
+     // Close the popup when clicking outside of it or the button
+     window.addEventListener('click', function (event) {
+       if (event.target !== popupNew && event.target !== togglePopupButtonNew) {
+         popupNew.classList.add('hidden'); // Hide the popup
+       }
+     });
+ 
+     // Add click event listener to the button with new ID
+     togglePopupButtonNew.addEventListener('click', togglePopupNew);

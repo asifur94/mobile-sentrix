@@ -102,3 +102,14 @@
 }
 
 /* header */
+.cart-bg.active {
+  background-color: #c9061a;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.cart-bg.active {
+  background-color: #c9061a;
+}
