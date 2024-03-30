@@ -4,108 +4,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popup Example</title>
-  <!-- Include Tailwind CSS -->
+  <title>Simple Add to Cart Counter</title>
+  <!-- Include the Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="../dist/output.css" rel="stylesheet" />
-  <style>
-    .white-text {
-      color: #fff;
-    }
 
-    .cart-bg.active {
-      background-color: #c9061a;
-    }
-  </style>
 </head>
 
-<body>
-  <div id="togglePopupButton" class="flex bg-[#dedede] cursor-pointer col-span-2 rounded-md p-3 gap-8 items-center">
-
-    <div class="bg-[#efefef] py-1 px-2 rounded-md cart-bg">
-      <svg width="34px" height="34px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-        id="togglePopupSVG">
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-        <g id="SVGRepo_iconCarrier">
-          <path
-            d="M2 3L2.26491 3.0883C3.58495 3.52832 4.24497 3.74832 4.62248 4.2721C5 4.79587 5 5.49159 5 6.88304V9.5C5 12.3284 5 13.7426 5.87868 14.6213C6.75736 15.5 8.17157 15.5 11 15.5H19"
-            stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
-          <path
-            d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z"
-            stroke="#1C274C" stroke-width="1.5"></path>
-          <path
-            d="M16.5 18.0001C17.3284 18.0001 18 18.6716 18 19.5001C18 20.3285 17.3284 21.0001 16.5 21.0001C15.6716 21.0001 15 20.3285 15 19.5001C15 18.6716 15.6716 18.0001 16.5 18.0001Z"
-            stroke="#1C274C" stroke-width="1.5"></path>
-          <path d="M11 9H8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path>
-          <path
-            d="M5 6H16.4504C18.5054 6 19.5328 6 19.9775 6.67426C20.4221 7.34853 20.0173 8.29294 19.2078 10.1818L18.7792 11.1818C18.4013 12.0636 18.2123 12.5045 17.8366 12.7523C17.4609 13 16.9812 13 16.0218 13H5"
-            stroke="#1C274C" stroke-width="1.5"></path>
-        </g>
-      </svg>
-    </div>
-    <div class="">
-      <p id="togglePopupText" class="text-[12px] cart-text cursor-pointer">cart</p>
-      <p class="text-[16px] font-medium text-gray-700 cart-text">$0.00</p>
-    </div>
+<body class=" min-h-screen flex items-center justify-center">
+  <div class="flex items-center space-x-4">
+    <button id="decrement"
+      class="px-3 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 focus:outline-none">-</button>
+    <span id="quantity" class="px-3 py-1 bg-white border border-gray-300 rounded">{{ quantity }}</span>
+    <button id="increment"
+      class="px-3 py-1 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 focus:outline-none">+</button>
   </div>
 
-  <div
-    class="popup fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded-md shadow-md hidden"
-    id="popup">
-    <p class="text-lg">This is the popup content. Click outside the popup or the button to close it.</p>
-  </div>
 
   <script>
-    // Get the button element
-    const togglePopupButton = document.getElementById('togglePopupButton');
-    // Get the text element
-    const togglePopupText = document.getElementById('togglePopupText');
-    // Get the cart background element
-    const cartBg = document.querySelector('.cart-bg');
-    // Get the SVG icon element
-    const togglePopupSVG = document.getElementById('togglePopupSVG');
-    // Get the popup element
-    const popup = document.getElementById('popup');
+    // JavaScript for functionality cart add counter
+    const decrementBtn = document.getElementById('decrement');
+    const incrementBtn = document.getElementById('increment');
+    const quantityDisplay = document.getElementById('quantity');
 
-    // Function to toggle the popup
-    function togglePopup() {
-      if (popup.classList.contains('hidden')) {
-        popup.classList.remove('hidden'); // Show the popup
-        togglePopupButton.style.backgroundColor = '#e3051b'; // Change background color
-        cartBg.classList.add('active'); // Add class to make cart background black
-        // Add class to make text white for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.add('white-text');
-        });
-      } else {
-        popup.classList.add('hidden'); // Hide the popup
-        togglePopupButton.style.backgroundColor = ''; // Reset background color
-        cartBg.classList.remove('active'); // Remove class to reset cart background color
-        // Remove class to reset text color for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.remove('white-text');
-        });
-      }
+    let quantity = 0;
+
+    // Function to update quantity display
+    function updateQuantityDisplay() {
+      quantityDisplay.textContent = quantity;
     }
 
-    // Close the popup when clicking outside of it or the button
-    window.addEventListener('click', function (event) {
-      if (event.target !== popup && event.target !== togglePopupButton && event.target !== togglePopupText && event.target.parentElement !== togglePopupText && event.target !== togglePopupSVG && event.target.parentElement !== togglePopupSVG) {
-        popup.classList.add('hidden'); // Hide the popup
-        togglePopupButton.style.backgroundColor = ''; // Reset background color
-        cartBg.classList.remove('active'); // Remove class to reset cart background color
-        // Remove class to reset text color for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.remove('white-text');
-        });
+    // Event listener for decrement button
+    decrementBtn.addEventListener('click', () => {
+      if (quantity > 0) {
+        quantity--;
+        updateQuantityDisplay();
       }
     });
 
-    // Add click event listeners to the button, text, and SVG icon
-    togglePopupButton.addEventListener('click', togglePopup);
-    togglePopupText.addEventListener('click', togglePopup);
-    togglePopupSVG.addEventListener('click', togglePopup);
+    // Event listener for increment button
+    incrementBtn.addEventListener('click', () => {
+      quantity++;
+      updateQuantityDisplay();
+    });
+
+    // Initial update
+    updateQuantityDisplay();
   </script>
 </body>
 
