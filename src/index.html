@@ -1067,75 +1067,56 @@
         </div>
       </div>
 
-      <div class="custom-popup fixed top-[109px] z-50 w-96 right-[34px] transform  bg-white rounded-md shadow-md hidden"
+      <div class="custom-popup absolute top-[109px] z-50 w-96 right-[34px] transform  bg-white shadow-md hidden"
         id="customPopup">
-        <div class="rounded-md flex justify-between bg-[#dc2626] px-4">
+        <div class="rounded-t-md  flex justify-between bg-[#dc2626] px-4">
           <button class="text-white  font-bold underline">View Cart
           </button>
           <img src="../assets/media/png/add to cart.png" alt="">
         </div>
 
-        <div class="col-span-5 max-sm:col-span-8 flex flex-col gap-6 ">
-          <!-- one -->
-          <div class="grid grid-cols-4 gap-4 ">
-            <div class=" relative  border-[1px] border-gray-200 col-span-1 h-fit">
-              <img src="../assets/media/png/AFTERMARKET.png" alt="" class="w-12  absolute top-[-12px] left-[-16px]">
-              <img src="../assets/media/png/107082080786_7.webp" alt="" class="w-28 py-6">
+        <!-- one -->
+        <div class="grid grid-cols-4  gap-3 mt-3 border-b-[1px] px-2 pb-3">
+          <div class=" relative    col-span-1 h-fit">
+            <img src="../assets/media/png/AFTERMARKET.png" alt="" class="w-8  absolute top-[4px] left-[2px] ">
+            <img src="../assets/media/png/107082080786_7.webp" alt="" class="w-28 ">
+
+          </div>
+          <div class="col-span-3 relative pr-6">
+            <img src="../assets/media/png/cross-c.png" class="absolute right-0 cursor-pointer" alt="">
+            <a href="#" class="text-xs hover:text-red-600 ">LCD ASSEMBLY WITH STEEL PLATE COMPATIBLE FOR
+              IPHONE 8 / SE
+              (2020
+              /
+              2022)
+              (AFTERMARKET PRO: XO7 INCELL)
+              (BLACK)</a>
+            <div class="grid grid-cols-2 mt-2 gap-4  justify-between">
+              <div class="grid grid-cols-3 border-2 rounded-md counter-container">
+                <button class="counter-button decrement flex items-center justify-center">-</button>
+                <span class="counter-display flex items-center justify-center border-x-2 py-[3px] px-2">0</span>
+                <button class="counter-button increment flex items-center justify-center">+</button>
+              </div>
+
+              <p class="text-sm font-bold mt-2 flex justify-end">$100.09</p>
+
 
             </div>
-            <div class="col-span-3">
-              <a href="#" class="text-sm text-[#18a6ef] ">LCD ASSEMBLY WITH STEEL PLATE COMPATIBLE FOR IPHONE 8 / SE
-                (2020
-                /
-                2022)
-                (AFTERMARKET PRO: XO7 INCELL)
-                (BLACK)</a>
-              <p class="text-sm text-[#e62337] mt-2">$100.09</p>
-              <div class="flex mt-2 items-center  w-[60%] max-sm:w-[100%] justify-between gap-4 ">
-                <div class="border-2 border-[#dedede]  rounded-md grid grid-cols-3 ">
-                  <button id="decreaseBtn" class="border-r-2 text-lg text-[#848484]">-</button>
-                  <input type="number" value="0" maxlength="12" name="qty"
-                    class="focus:none text-center text-lg text-[#848484] py-[4px] " id="qty_feature_88021">
-                  <button id="increaseBtn" class="border-l-2 text-lg text-[#848484] increaseBtn">+</button>
-                </div>
-                <div>
-                  <img src="../assets/media/svg/cart-check-svgrepo-com.svg" alt=""
-                    class="hover:bg-[#ff0004] rounded-md bg-black  cursor-pointer transition-all duration-300 p-2 w-[145px]">
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- two -->
-          <div class="grid grid-cols-4 gap-4 ">
-            <div class=" relative  border-[1px] border-gray-200 col-span-1 h-fit">
-              <img src="../assets/media/png/sub-1.png" alt="" class="w-12  absolute top-[-12px] left-[-16px]">
-              <img src="../assets/media/png/s-pro.png" alt="" class="w-28 py-6">
 
-            </div>
-            <div class="col-span-3">
-              <p class="text-sm text-[#18a6ef] ">LCD ASSEMBLY WITH STEEL PLATE COMPATIBLE FOR IPHONE 8 / SE (2020
-                /
-                2022)
-                (AFTERMARKET PRO: XO7 INCELL)
-                (BLACK)</p>
-              <p class="text-sm text-[#e62337] mt-2">$14.09</p>
-              <div class="flex mt-2 items-center  w-[60%] max-sm:w-[100%] justify-between gap-4 ">
-                <div class="border-2 border-[#dedede]  rounded-md grid grid-cols-3 ">
-                  <button id="decreaseBtn" class="border-r-2 text-lg text-[#848484]">-</button>
-                  <input type="number" value="0" maxlength="12" name="qty"
-                    class="focus:none text-center text-lg text-[#848484] py-[4px] " id="qty_feature_88021">
-                  <button id="increaseBtn" class="border-l-2 text-lg text-[#848484] increaseBtn">+</button>
-                </div>
-                <div>
-                  <img src="../assets/media/svg/cart-check-svgrepo-com.svg" alt=""
-                    class="hover:bg-[#ff0004] rounded-md bg-black  cursor-pointer transition-all duration-300 p-2 w-[145px]">
-                </div>
-              </div>
-            </div>
           </div>
+
         </div>
-      </div>/
-
+        <div class=" bg-[#f3f3f3] flex justify-between w-11/12 mx-auto my-3 px-4 py-3 rounded-full ">
+          <p class="text-sm">Cart Subtotal:</p>
+          <button class="font-semibold text-xs">
+            $20.11</button>
+        </div>
+        <div class=" bg-[#e3051b] flex gap-2 justify-center w-10/12 mx-auto my-3 px-4 py-3 rounded-full items-center">
+          <p class="text-white text-sm">Proceed to Checkout </p>
+          <img src="../assets/media/png/cart-2.png" alt="">
+        </div>
+        <p class="my-4 underline text-sm text-center">Save cart for later</p>
+      </div>
     </div>
     <!-- main header -->
     <div class="custom-shadow  py-2">
@@ -1865,6 +1846,7 @@
 
 
     // Get the button element
+    // Get the button element
     const togglePopupButton = document.getElementById('togglePopupButton');
     // Get the cart background element
     const cartBg = document.querySelector('.cart-bg');
@@ -1874,39 +1856,53 @@
     // Function to toggle the popup
     function togglePopup() {
       if (customPopup.classList.contains('hidden')) {
-        customPopup.classList.remove('hidden'); // Show the popup
-        togglePopupButton.style.backgroundColor = '#e3051b'; // Change background color
-        cartBg.classList.add('active'); // Add class to make cart background black
-        // Add class to make text white for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.add('white-text');
-        });
+        showPopup();
       } else {
-        customPopup.classList.add('hidden'); // Hide the popup
-        togglePopupButton.style.backgroundColor = ''; // Reset background color
-        cartBg.classList.remove('active'); // Remove class to reset cart background color
-        // Remove class to reset text color for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.remove('white-text');
-        });
+        hidePopup();
       }
     }
 
-    // Close the popup when clicking outside of it or the button
-    window.addEventListener('click', function (event) {
-      if (event.target !== customPopup && event.target !== togglePopupButton) {
-        customPopup.classList.add('hidden'); // Hide the popup
-        togglePopupButton.style.backgroundColor = ''; // Reset background color
-        cartBg.classList.remove('active'); // Remove class to reset cart background color
-        // Remove class to reset text color for all p tags with the class cart-text
-        document.querySelectorAll('.cart-text').forEach(element => {
-          element.classList.remove('white-text');
-        });
+    // Function to show the popup
+    function showPopup() {
+      customPopup.classList.remove('hidden'); // Show the popup
+      togglePopupButton.style.backgroundColor = '#e3051b'; // Change background color
+      cartBg.classList.add('active'); // Add class to make cart background black
+      // Add class to make text white for all p tags with the class cart-text
+      document.querySelectorAll('.cart-text').forEach(element => {
+        element.classList.add('white-text');
+      });
+
+      // Add event listener to close the popup when clicking outside
+      window.addEventListener('click', closePopupOnClickOutside);
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+      customPopup.classList.add('hidden'); // Hide the popup
+      togglePopupButton.style.backgroundColor = ''; // Reset background color
+      cartBg.classList.remove('active'); // Remove class to reset cart background color
+      // Remove class to reset text color for all p tags with the class cart-text
+      document.querySelectorAll('.cart-text').forEach(element => {
+        element.classList.remove('white-text');
+      });
+
+      // Remove event listener to close the popup when clicking outside
+      window.removeEventListener('click', closePopupOnClickOutside);
+    }
+
+    // Function to close the popup when clicking outside
+    function closePopupOnClickOutside(event) {
+      if (!customPopup.contains(event.target) && event.target !== togglePopupButton) {
+        hidePopup();
       }
-    });
+    }
 
     // Add click event listener to the button
     togglePopupButton.addEventListener('click', togglePopup);
+
+
+
+
 
     // JavaScript for functionality cart add counter
     document.querySelectorAll('.counter-container').forEach(container => {
